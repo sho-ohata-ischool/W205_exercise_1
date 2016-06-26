@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 ./start-hadoop.sh
 /data/start_postgres.sh
@@ -18,9 +18,9 @@ for f in *.csv; do
 	tail -n +2 "$f" > "${f}".tmp && mv "${f}".tmp "$f"
 done
 
-for f in *.csv; do
-	sed -i 's/\Not Available//g' "$f"
-done
+#for f in *.csv; do
+#	sed -i 's/\Not Available//g' "$f"
+#done
 
 mv "Hospital General Information.csv" hospitals.csv
 mv "Timely and Effective Care - Hospital.csv" effective_care.csv
