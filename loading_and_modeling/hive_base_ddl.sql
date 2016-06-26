@@ -1,3 +1,5 @@
+ hive
+
  CREATE EXTERNAL TABLE hospital
  (
  	Provider_ID string,
@@ -17,7 +19,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/hospital.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/hospitals/hospital.csv’; 
 
  CREATE EXTERNAL TABLE effective_care 
  (
@@ -43,7 +45,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/effective_care.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/effective_care/effective_care.csv’; 
 
  CREATE EXTERNAL TABLE readmissions 
  (
@@ -71,7 +73,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/readmissions.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/readmissions/readmissions.csv’; 
 
  CREATE EXTERNAL TABLE measures
  (
@@ -87,7 +89,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/Measures.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/Measures/Measures.csv’; 
 
  CREATE EXTERNAL TABLE survey_responses
  (
@@ -131,4 +133,4 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/survey_responses.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/survey_responses/survey_responses.csv’; 
