@@ -1,4 +1,4 @@
- CREATE EXTERNAL TABLE hospital
+CREATE EXTERNAL TABLE hospital
  (
  	Provider_ID string,
  	Hospital_Name string,
@@ -12,15 +12,15 @@
  	Hospital_Ownership string,
  	Emergency_Services string
  	) 
- ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
- WITH SERDEPROPERTIES (    
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES (    
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/hospitals'; 
+STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/hospitals'; 
 
- CREATE EXTERNAL TABLE effective_care 
- (
+CREATE EXTERNAL TABLE effective_care 
+(
  	Provider_ID string,
  	Hospital_Name string,
  	Address string,
@@ -38,15 +38,15 @@
  	Measure_start_date string,
  	Measure_end_date string
  	)
- ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
- WITH SERDEPROPERTIES (    
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES (    
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/effective_care'; 
+STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/effective_care'; 
 
- CREATE EXTERNAL TABLE readmissions 
- (
+CREATE EXTERNAL TABLE readmissions 
+(
  	Provider_ID string,
  	Hospital_Name string,
  	Address string,
@@ -66,29 +66,29 @@
  	Measure_start_date string,
  	Measure_end_date string
  	)
- ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
- WITH SERDEPROPERTIES (    
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES (    
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/readmissions'; 
+STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/readmissions'; 
 
- CREATE EXTERNAL TABLE measures (
- 	Measure_name string,
+CREATE EXTERNAL TABLE measures (
+	Measure_name string,
  	Measure_ID string,
  	Measure_start_quarter string,
  	Measure_start_date string,
  	Measure_end_quarter string,
  	Measure_end_date string)
- ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
- WITH SERDEPROPERTIES (    
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES (    
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/Measures'; 
+STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/Measures'; 
 
- CREATE EXTERNAL TABLE survey_responses
- (
+CREATE EXTERNAL TABLE survey_responses
+(
  	Provider_ID string,
  	Hospital_Name string,
  	Address string,
@@ -124,9 +124,9 @@
  	HCAHPS_Base_Score string,
  	HCAHPS_Consistency_Score string,
 )
- ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
- WITH SERDEPROPERTIES (    
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES (    
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/survey_responses'; 
+STORED AS TEXTFILE LOCATION '1/user/w205/hospital_compare/survey_responses'; 
