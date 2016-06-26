@@ -1,5 +1,3 @@
- hive
-
  CREATE EXTERNAL TABLE hospital
  (
  	Provider_ID string,
@@ -19,7 +17,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/hospitals/hospital.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/hospitals’; 
 
  CREATE EXTERNAL TABLE effective_care 
  (
@@ -45,7 +43,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/effective_care/effective_care.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/effective_care’; 
 
  CREATE EXTERNAL TABLE readmissions 
  (
@@ -73,23 +71,21 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/readmissions/readmissions.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/readmissions’; 
 
- CREATE EXTERNAL TABLE measures
- (
+ CREATE EXTERNAL TABLE measures (
  	Measure_name string,
  	Measure_ID string,
  	Measure_start_quarter string,
  	Measure_start_date string,
  	Measure_end_quarter string,
- 	Measure_end_date string
- 	)
+ 	Measure_end_date string)
  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
  WITH SERDEPROPERTIES (    
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/Measures/Measures.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/Measures’; 
 
  CREATE EXTERNAL TABLE survey_responses
  (
@@ -133,4 +129,4 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/survey_responses/survey_responses.csv’; 
+ STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/survey_responses’; 

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 ./start-hadoop.sh
-./data/start_postgres.sh
+/data/start_postgres.sh
 
 su - w205
 cd /data
@@ -15,7 +15,7 @@ unzip Nq* -d files
 cd files
 
 for f in *.csv; do
-	tail -n +2 "$f" > "{f}".tmp && mv "${f}".tmp "$f"
+	tail -n +2 "$f" > "${f}".tmp && mv "${f}".tmp "$f"
 done
 
 for f in *.csv; do
@@ -35,3 +35,5 @@ hdfs dfs -put effective_care.csv /user/w205/hospital_compare/effective_care
 hdfs dfs -put readmissions.csv /user/w205/hospital_compare/readmissions
 hdfs dfs -put Measures.csv /user/w205/hospital_compare/Measures
 hdfs dfs -put survey_responses.csv /user/w205/hospital_compare/survey_responses
+
+hdfs dfs -chmod -R 777 /user/w205/hospital_compare
