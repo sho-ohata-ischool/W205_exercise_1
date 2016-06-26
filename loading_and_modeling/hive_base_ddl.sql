@@ -17,7 +17,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/hospitals’; 
+ STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/hospitals'; 
 
  CREATE EXTERNAL TABLE effective_care 
  (
@@ -43,7 +43,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/effective_care’; 
+ STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/effective_care'; 
 
  CREATE EXTERNAL TABLE readmissions 
  (
@@ -71,7 +71,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/readmissions’; 
+ STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/readmissions'; 
 
  CREATE EXTERNAL TABLE measures (
  	Measure_name string,
@@ -85,7 +85,7 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/Measures’; 
+ STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/Measures'; 
 
  CREATE EXTERNAL TABLE survey_responses
  (
@@ -129,4 +129,4 @@
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
- STORED AS TEXTFILE LOCATION ‘/user/w205/hospital_compare/survey_responses’; 
+ STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/survey_responses'; 
