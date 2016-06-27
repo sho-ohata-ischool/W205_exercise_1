@@ -122,7 +122,7 @@ CREATE EXTERNAL TABLE survey_responses
  	Overall_Rate_Hosp_Improv_Pts string,
  	Overall_Rate_Hosp_Dim_Score string,
  	HCAHPS_Base_Score string,
- 	HCAHPS_Consistency_Score string,
+ 	HCAHPS_Consistency_Score string
 )
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
 WITH SERDEPROPERTIES (    
