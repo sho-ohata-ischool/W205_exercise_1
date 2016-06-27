@@ -1,12 +1,5 @@
 #!/bin/bash
 
-mount -t ext4 /dev/xvdf /data
-./start-hadoop.sh
-/data/start_postgres.sh
-
-su - w205
-cd /data
-
 mkdir files
 wget https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBWDmP77H1DQXcyacr2khotGbDHHW_s?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=Hospital_Revised_Flatfiles.zip
 
