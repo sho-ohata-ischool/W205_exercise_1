@@ -1,4 +1,10 @@
-CREATE EXTERNAL TABLE hospital
+drop table hospital_raw;
+drop table effective_care_raw;
+drop table measures_raw;
+drop table survey_responses_raw;
+drop table readmissions_raw;
+
+CREATE EXTERNAL TABLE hospital_raw
  (
  	Provider_ID string,
  	Hospital_Name string,
@@ -19,7 +25,7 @@ WITH SERDEPROPERTIES (
    	"escapeChar"    = '\\' ) 
 STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/hospitals'; 
 
-CREATE EXTERNAL TABLE effective_care 
+CREATE EXTERNAL TABLE effective_care_raw 
 (
  	Provider_ID string,
  	Hospital_Name string,
@@ -45,7 +51,7 @@ WITH SERDEPROPERTIES (
    	"escapeChar"    = '\\' ) 
 STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/effective_care'; 
 
-CREATE EXTERNAL TABLE readmissions 
+CREATE EXTERNAL TABLE readmissions_raw 
 (
  	Provider_ID string,
  	Hospital_Name string,
@@ -87,7 +93,7 @@ WITH SERDEPROPERTIES (
    	"escapeChar"    = '\\' ) 
 STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/Measures'; 
 
-CREATE EXTERNAL TABLE survey_responses
+CREATE EXTERNAL TABLE survey_responses_raw
 (
  	Provider_ID string,
  	Hospital_Name string,
