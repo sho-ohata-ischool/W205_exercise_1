@@ -57,7 +57,7 @@ CREATE EXTERNAL TABLE readmissions
  	Phone_Number BIGINT,
  	Measure_name string,
  	Measure_ID string,
- 	Compared_to_national,
+ 	Compared_to_national string,
  	Denominator INT,
  	Score DECIMAL,
  	Lower_estimate DECIMAL,
