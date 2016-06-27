@@ -129,4 +129,4 @@ WITH SERDEPROPERTIES (
  	"separatorChar" = ",",    
  	"quoteChar"     = '"', 
    	"escapeChar"    = '\\' ) 
-STORED AS TEXTFILE LOCATION '1/user/w205/hospital_compare/survey_responses'; 
+STORED AS TEXTFILE LOCATION '/user/w205/hospital_compare/survey_responses'; 
