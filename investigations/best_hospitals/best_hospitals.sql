@@ -11,7 +11,7 @@ select h.hospital_name, avg(cast(ef.score as int)) as avg_score
 	order by avg_score desc 
 	limit 10;
 
-select h.hospital_name, avg(cast(score as int)) as avg_score
+select h.hospital_name, sum(cast(score as int)) as avg_score
 	from effective_care ef 
 		inner join hospitals h 
 			on ef.provider_id = h.provider_id
