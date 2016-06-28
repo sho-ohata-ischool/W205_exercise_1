@@ -1,10 +1,10 @@
-drop table hospital_raw;
+drop table hospitals;
 drop table effective_care_raw;
-drop table measures_raw;
+drop table measures;
 drop table survey_responses_raw;
 drop table readmissions_raw;
 
-CREATE EXTERNAL TABLE hospital_raw
+CREATE EXTERNAL TABLE hospitals
  (
  	Provider_ID string,
  	Hospital_Name string,
