@@ -1,7 +1,7 @@
 select h.state, avg(cast(score as int)) as avg_score
 	from effective_care ef 
 		inner join hospitals h
-			on ef.provider_id = h.hospital_id
+			on ef.provider_id = h.provider_id
 	where score <> '' and 
 		score not like 'High%' and 
 		score not like 'Low%' and 
