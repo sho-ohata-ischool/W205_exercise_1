@@ -4,3 +4,5 @@ The user should start hadoop as well as postgres and change to user w205 and dow
 
 Link to medicare data:
 https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBWDmP77H1DQXcyacr2khotGbDHHW_s?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=Hospital_Revised_Flatfiles.zip
+
+Once the bash script is completed you can go ahead and execute the hive_base_ddl.sql script to create raw tables from the csv files that are stored in hdfs. Once that is completed you can go to the transforming folder for the next steps.
