@@ -102,7 +102,6 @@ CREATE EXTERNAL TABLE survey_responses_raw
  	State string,
  	Zip_Code INT,
  	County string,
- 	Phone_Number BIGINT,
  	Comm_Nurses_Achieve_Pts string,
  	Comm_Nurses_Improv_Pts string,
  	Comm_Nurses_Dim_Score string,
