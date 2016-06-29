@@ -1,16 +1,13 @@
+--select top 10 hospital name by average score
 select h.hospital_name, avg(cast(ef.score as int)) as avg_score
 	from effective_care ef 
 		inner join hospitals h 
-		on ef.provider_id = h.provider_id
-	where score <> '' and 
-	score not like 'High%' and 
-	score not like 'Low%' and 
-	score not like 'Med%' and 
-	score not like 'Very%' 
+			on ef.provider_id = h.provider_id 
 	group by ef.provider_id , h.hospital_name
 	order by avg_score desc 
 	limit 10;
 
+--select top 10 hospital with highest aggregate score for the 5 most common measure
 select h.hospital_name, sum(cast(score as int)) as avg_score
 	from effective_care ef 
 		inner join hospitals h 
@@ -18,20 +15,29 @@ select h.hospital_name, sum(cast(score as int)) as avg_score
 		inner join (
 			select measure_id, count(measure_id) as count_m 
 				from effective_care 
-					where score <> '' and 
-					score not like 'High%' and 
-					score not like 'Low%' and 
-					score not like 'Med%' and 
-					score not like 'Very%' 
-				group by measure_id
-				order by count_m desc
-				limit 5) top_measure
+			group by measure_id
+			order by count_m desc
+			limit 5) top_measure
 			on ef.measure_id = top_measure.measure_id
-		where score <> '' and 
-			score not like 'High%' and 
-			score not like 'Low%' and 
-			score not like 'Med%' and 
-			score not like 'Very%' 
 	group by h.hospital_name
 	order by avg_score desc 
+	limit 10;
+
+--select hospitals where readmission rates for various procedures on average are better than the national rate
+select s1.hospital, hospital_better_count/hospital_total_count as hospital_ratio from (
+	select h.hospital, count(*) as hospital_total_count
+		from readmissions r
+			inner join hospitals h
+				on r.provider_id = h.provider_id
+		group by h.hospital) s1 inner join (
+	select h.hospital, count(*) as hospital_better_count
+		from readmissions r
+			inner join hospitals h
+				on r.provider_id = h.provider_id
+			where compared_to_national = 'Better than the National Rate'
+		group by h.hospital) s2 
+		on s1.hospital = s2.hospital
+	where hospital_total_count > 0 
+	and hospital_better_count > 0
+	order by hospital_ratio desc
 	limit 10;
