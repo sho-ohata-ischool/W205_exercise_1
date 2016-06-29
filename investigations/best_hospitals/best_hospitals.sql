@@ -37,7 +37,7 @@ select s1.hospital_name, hospital_better_count/hospital_total_count as hospital_
 			where compared_to_national = 'Better than the National Rate'
 		group by h.hospital_name, h.provider_id) s2 
 		on s1.hospital_name = s2.hospital_name
-	where hospital_total_count > 0 
-	and hospital_better_count > 0
+	where hospital_total_count > 10 
+	and hospital_better_count > 10
 	order by hospital_ratio desc
 	limit 10;
