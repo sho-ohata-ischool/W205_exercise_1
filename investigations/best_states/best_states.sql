@@ -37,7 +37,7 @@ select s1.state, state_better_count/state_total_count as state_ratio from (
 			where compared_to_national = 'Better than the National Rate'
 		group by h.state) s2 
 		on s1.state = s2.state
-	where state_total_count > 0 
+	where state_total_count > 10 
 	and state_better_count > 0
 	order by state_ratio desc
 	limit 10;
