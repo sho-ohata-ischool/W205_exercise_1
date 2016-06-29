@@ -9,4 +9,4 @@ select h.hospital_name, cast(hcahps_base_score as int) + cast(hcahps_consistency
 			from effective_care 
 				group by  provider_id) ef 
 			on s.provider_id = ef.provider_id
-	order by avg_score desc 
+	order by avg_score desc; 
