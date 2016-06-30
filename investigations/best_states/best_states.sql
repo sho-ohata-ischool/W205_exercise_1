@@ -23,15 +23,6 @@ select h.state, avg(cast(score as int)) as avg_score
 	order by avg_score desc 
 	limit 10;
 
---Calculate average readmission score by state
-select h.state, avg(cast(score as int)) as score_avg
-	from readmissions r 
-		inner join hospitals h
-			on r.provider_id = h.provider_id
-	group by h.state
-	order by score_avg desc
-	limit 10;
-
 --select states where readmission rates for various procedures on average are better than the national rate
 select s1.state, state_better_count/state_total_count as state_ratio from (
 	select h.state, count(*) as state_total_count
