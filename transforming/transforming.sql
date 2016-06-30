@@ -1,3 +1,8 @@
+--drop tables if they exist
+drop table SURVEY_RESPONSES;
+drop table effective_care;
+drop table READMISSIONS;
+
 --Transform table to exclude NULL and ordinal variables
 CREATE TABLE EFFECTIVE_CARE AS SELECT
 	PROVIDER_ID, 

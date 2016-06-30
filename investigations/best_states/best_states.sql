@@ -7,8 +7,8 @@ select h.state, avg(cast(score as int)) as avg_score
 	order by avg_score desc 
 limit 10;
 
---select top 10 states with highest aggregate score for the 5 most common measure
-select h.state, sum(cast(score as int)) as avg_score
+--select top 10 states with highest average score for the 5 most common measure
+select h.state, avg(cast(score as int)) as avg_score
 	from effective_care ef 
 		inner join hospitals h 
 			on ef.provider_id = h.provider_id
@@ -21,6 +21,15 @@ select h.state, sum(cast(score as int)) as avg_score
 			on ef.measure_id = top_measure.measure_id
 	group by h.state
 	order by avg_score desc 
+	limit 10;
+
+--Calculate average readmission score by state
+select h.state, avg(cast(score as int)) as score_avg
+	from readmissions r 
+		inner join hospitals h
+			on r.provider_id = h.provider_id
+	group by h.state
+	order by score_avg desc
 	limit 10;
 
 --select states where readmission rates for various procedures on average are better than the national rate
